@@ -1,0 +1,1 @@
+// Verifica o token de acesso
