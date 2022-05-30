@@ -1,8 +1,9 @@
 (async () => { 
-    const exibe = require('./exibe.models');
+    const exibe = require('./select.models');
     const add = require('./insert.models');
     const update = require('./update.models');
     const delet = require('./delet.models');
+    const find = require('./find.models');
     console.log('Começou bacana');
 
     console.log('INSER INTO pessoas')
@@ -20,5 +21,8 @@
     console.log('DELETE pessoas');
     const deletar = await delet.deletCustomers(7);
     console.log(deletar);
+
+    console.log('FIND INTO pessoas')
+    const busca = await find.findCustomers("maria");
 
 })();   

@@ -11,9 +11,11 @@ async function connect(){ // conexao mySql
     return connection;
 }
 
-async function selectCustomers(){
+async function findCustomers(nome){
     const conn = await connect();
-    return await conn.query('SELECT * FROM pessoas');
+    const sql = 'SELECT * FROM pessoas WHERE nome=?;';
+    const values = [nome];
+    return await conn.query(sql, values);
 }
 
-module.exports = {selectCustomers};
+module.exports = {findCustomers};
